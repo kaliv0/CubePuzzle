@@ -15,10 +15,10 @@ public class Orchestrator {
         for (int i = 0; i < Constants.VALID_SIDE_COUNT; i++) {
             for (int j = 0; j < Constants.VALID_SIDE_COUNT; j++) {
                 for (int k = 0; k < Constants.VALID_SIDE_COUNT; k++) {
-                    for (int l = 0; l < Constants.VALID_SIDE_COUNT; l++) {
+                    for (int m = 0; m < Constants.VALID_SIDE_COUNT; m++) {
                         List<String> permutations = Permutator.calculatePermutations(
                                 firstCubePositions.get(i), secondCubePositions.get(j),
-                                thirdCubePositions.get(k), fourthCubePositions.get(l));
+                                thirdCubePositions.get(k), fourthCubePositions.get(m));
 
                         List<String> currResult = Extractor.extractValidPermutations(permutations);
                         if (currResult.size() != 0) {
