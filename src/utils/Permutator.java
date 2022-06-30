@@ -31,7 +31,6 @@ public class Permutator {
             result.add(String.join(" ", permutation));
             return;
         }
-
         for (int i = 0; i < elements.length; i++) {
             if (used[i]) {
                 continue;
