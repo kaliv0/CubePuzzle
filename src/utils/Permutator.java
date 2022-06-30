@@ -1,4 +1,6 @@
-package Main.utils;
+package utils;
+
+import constants.Separators;
 
 import java.util.*;
 
@@ -28,7 +30,7 @@ public class Permutator {
     //creates individual permutation from given cubePositions
     private static void permute(int index) {
         if (index == elements.length) {
-            result.add(String.join(" ", permutation));
+            result.add(String.join(Separators.PERMUTATION_STRING_SEPARATOR, permutation));
             return;
         }
         for (int i = 0; i < elements.length; i++) {

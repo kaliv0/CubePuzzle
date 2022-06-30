@@ -1,7 +1,7 @@
-package Main.utils;
+package utils;
 
 
-import Main.common.*;
+import constants.*;
 
 import java.util.Scanner;
 import java.util.regex.*;
@@ -10,10 +10,10 @@ public class IO {
 
     //reads input from user and calls validations on input
     public static String[] promptUser() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println(Constants.PROMPT_MESSAGE);
-        String clientInput = sc.nextLine();
-        String[] cubeList = clientInput.split(",");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(PromptMessages.PROMPT_MESSAGE);
+        String clientInput = scanner.nextLine();
+        String[] cubeList = clientInput.split(Separators.CUBE_LIST_SEPARATOR);
 
         validateCubeCount(cubeList.length);
         for (String cube : cubeList) {
@@ -25,7 +25,7 @@ public class IO {
 
     //checks if user entered 4 cubes, if not prompts user to enter input again
     private static void validateCubeCount(int cubeCount) {
-        if (cubeCount != Constants.VALID_CUBE_COUNT) {
+        if (cubeCount != Counts.VALID_CUBE_COUNT) {
             System.err.println(ErrorMessages.INVALID_INPUT);
             promptUser();
         }
@@ -33,7 +33,7 @@ public class IO {
 
     //checks if all cubes have 6 sides
     private static void validateSideCount(String cube) {
-        if (cube.length() != Constants.VALID_SIDE_COUNT) {
+        if (cube.length() != Counts.VALID_SIDE_COUNT) {
             System.err.println(ErrorMessages.INVALID_SIDE_COUNT);
             promptUser();
         }
@@ -41,15 +41,15 @@ public class IO {
 
     //checks cube colors and if each cube contains all the valid colors
     private static void validateColors(String cube) {
-        Pattern pattern = Pattern.compile(Constants.CUBE_TESTER);
+        Pattern pattern = Pattern.compile(Validations.CUBE_TESTER);
         Matcher matcher = pattern.matcher(cube);
         boolean matchFound = matcher.find();
         if (!matchFound) {
             System.err.println(ErrorMessages.INVALID_COLORS);
             promptUser();
         }
-        if (cube.indexOf('R') == -1 || cube.indexOf('B') == -1
-                || cube.indexOf('G') == -1 || cube.indexOf('Y') == -1) {
+        if (!cube.contains(Colors.RED) || !cube.contains(Colors.BLUE)
+                || !cube.contains(Colors.GREEN) || !cube.contains(Colors.YELLOW)) {
             System.err.println(ErrorMessages.INVALID_COLORS);
             promptUser();
         }

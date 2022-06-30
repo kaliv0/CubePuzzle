@@ -1,4 +1,4 @@
-package Main.utils;
+package utils;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
-package Main.utils;
+package utils;
 
-import Main.common.Constants;
+import constants.*;
 
 import java.nio.CharBuffer;
 import java.util.List;
@@ -15,15 +15,15 @@ public class ResultReader {
         for (List<String> permutationList : validPermutations) {
             for (String permutation : permutationList) {
                 permutationCounter++;
-                String[] currPermutation = permutation.split(" ");
+                String[] currPermutation = permutation.split(Separators.PERMUTATION_STRING_SEPARATOR);
 
-                sb.append(Constants.HEADER_MESSAGE)
-                        .append("\n")
+                sb.append(PromptMessages.HEADER_MESSAGE)
+                        .append(Separators.CUBE_STACK_SEPARATOR)
                         .append(prepareCubesForDisplay(currPermutation))
-                        .append("\n");
+                        .append(Separators.CUBE_STACK_SEPARATOR);
             }
         }
-        sb.append(Constants.PERMUTATION_COUNT)
+        sb.append(PromptMessages.PERMUTATION_COUNT)
                 .append(permutationCounter);
         return sb.toString();
     }
@@ -38,13 +38,13 @@ public class ResultReader {
 
             String joinedColors = CharBuffer.wrap(colorArray).chars()
                     .mapToObj(intValue -> String.valueOf((char) intValue))
-                    .collect(Collectors.joining(Constants.COlOR_SEPARATOR));
+                    .collect(Collectors.joining(Separators.COlOR_SEPARATOR));
 
             cubeNumber = i + 1;
             sb.append(cubeNumber)
-                    .append(Constants.COlOR_SEPARATOR)
+                    .append(Separators.COlOR_SEPARATOR)
                     .append(joinedColors)
-                    .append("\n");
+                    .append(Separators.CUBE_STACK_SEPARATOR);
         }
         return sb.toString();
     }

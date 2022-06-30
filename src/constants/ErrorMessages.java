@@ -1,4 +1,4 @@
-package Main.common;
+package constants;
 
 public class ErrorMessages {
     public static final String NO_VALID_PERMUTATIONS_FOUND = "No valid permutations found";

@@ -1,6 +1,6 @@
-package Main.utils;
+package utils;
 
-import Main.common.Constants;
+import constants.*;
 
 import java.util.*;
 
@@ -12,13 +12,13 @@ public class Orchestrator {
             List<String> thirdCubePositions, List<String> fourthCubePositions) {
 
         List<List<String>> validPermutations = new ArrayList<>();
-        for (int i = 0; i < Constants.VALID_SIDE_COUNT; i++) {
-            for (int j = 0; j < Constants.VALID_SIDE_COUNT; j++) {
-                for (int k = 0; k < Constants.VALID_SIDE_COUNT; k++) {
-                    for (int m = 0; m < Constants.VALID_SIDE_COUNT; m++) {
+        for (int firstIndexer = 0; firstIndexer < Counts.VALID_SIDE_COUNT; firstIndexer++) {
+            for (int secondIndexer = 0; secondIndexer < Counts.VALID_SIDE_COUNT; secondIndexer++) {
+                for (int thirdIndexer = 0; thirdIndexer < Counts.VALID_SIDE_COUNT; thirdIndexer++) {
+                    for (int fourthIndexer = 0; fourthIndexer < Counts.VALID_SIDE_COUNT; fourthIndexer++) {
                         List<String> permutations = Permutator.calculatePermutations(
-                                firstCubePositions.get(i), secondCubePositions.get(j),
-                                thirdCubePositions.get(k), fourthCubePositions.get(m));
+                                firstCubePositions.get(firstIndexer), secondCubePositions.get(secondIndexer),
+                                thirdCubePositions.get(thirdIndexer), fourthCubePositions.get(fourthIndexer));
 
                         List<String> currResult = Extractor.extractValidPermutations(permutations);
                         //avoids duplicates from symmetric cubes

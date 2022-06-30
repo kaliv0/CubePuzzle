@@ -1,9 +1,7 @@
-package Main;
+import constants.*;
+import utils.*;
 
-import Main.common.*;
-import Main.utils.*;
-
-import java.util.*;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
