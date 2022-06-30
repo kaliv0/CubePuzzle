@@ -38,11 +38,11 @@ public class ResultReader {
 
             String joinedColors = CharBuffer.wrap(colorArray).chars()
                     .mapToObj(intValue -> String.valueOf((char) intValue))
-                    .collect(Collectors.joining(Constants.COlOR_SEPARATOR));
+                    .collect(Collectors.joining(Constants.COLOR_SEPARATOR));
 
             cubeNumber = i + 1;
             sb.append(cubeNumber)
-                    .append(Constants.COlOR_SEPARATOR)
+                    .append(Constants.COLOR_SEPARATOR)
                     .append(joinedColors)
                     .append("\n");
         }
