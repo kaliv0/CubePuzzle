@@ -1,5 +1,7 @@
-import common.*;
-import utils.*;
+package Main;
+
+import Main.common.*;
+import Main.utils.*;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
-package utils;
+package Main.utils;
 
-import common.Constants;
+import Main.common.Constants;
 
 import java.util.*;
 
@@ -22,7 +22,10 @@ public class Orchestrator {
 
                         List<String> currResult = Extractor.extractValidPermutations(permutations);
                         if (currResult.size() != 0) {
-                            validPermutations.add(currResult);
+                            //avoids duplicates from symmetric cubes
+                            if (!validPermutations.contains(currResult)) {
+                                validPermutations.add(currResult);
+                            }
                         }
                     }
                 }

@@ -1,6 +1,7 @@
-package utils;
+package Main.utils;
 
-import common.*;
+
+import Main.common.*;
 
 import java.util.Scanner;
 import java.util.regex.*;

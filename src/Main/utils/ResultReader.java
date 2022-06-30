@@ -1,6 +1,6 @@
-package utils;
+package Main.utils;
 
-import common.Constants;
+import Main.common.Constants;
 
 import java.nio.CharBuffer;
 import java.util.List;
@@ -38,11 +38,11 @@ public class ResultReader {
 
             String joinedColors = CharBuffer.wrap(colorArray).chars()
                     .mapToObj(intValue -> String.valueOf((char) intValue))
-                    .collect(Collectors.joining(Constants.COLOR_SEPARATOR));
+                    .collect(Collectors.joining(Constants.COlOR_SEPARATOR));
 
             cubeNumber = i + 1;
             sb.append(cubeNumber)
-                    .append(Constants.COLOR_SEPARATOR)
+                    .append(Constants.COlOR_SEPARATOR)
                     .append(joinedColors)
                     .append("\n");
         }

@@ -1,6 +1,6 @@
-package utils;
+package Main.utils;
 
-import common.Constants;
+import Main.common.Constants;
 
 import java.util.*;
 
@@ -22,11 +22,11 @@ public class Extractor {
         return result;
     }
 
-    //validates colors in column of cube stack
+    //validates all colors in column of cube stack
     private static boolean validateColors(boolean isValid, String[] currPermutation) {
-        for (int row = 0; row < currPermutation.length; row++) {
+        for (int row = 0; row < Constants.PERMUTATION_LENGTH; row++) {
             Set<Character> set = new HashSet<>();
-            for (int col = 0; col < currPermutation.length; col++) {
+            for (int col = 0; col < Constants.PERMUTATION_LENGTH; col++) {
                 set.add(currPermutation[col].charAt(row));
             }
             isValid = set.size() == Constants.VALID_COLOR_COUNT;
