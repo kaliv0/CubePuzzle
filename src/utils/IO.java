@@ -10,30 +10,28 @@ public class IO {
         Scanner sc = new Scanner(System.in);
         System.out.println(Constants.PROMPT_MESSAGE);
         String clientInput = sc.nextLine();
-        String[] inputList = clientInput.split(",");
+        String[] cubeList = clientInput.split(",");
 
-        if (inputList.length != Constants.VALID_CUBE_COUNT) {
+        validateCubeCount(cubeList.length);
+        for (String cube : cubeList) {
+            validateSideCount(cube);
+            validateColors(cube);
+        }
+        return cubeList;
+    }
+
+    private static void validateCubeCount(int cubeCount) {
+        if (cubeCount != Constants.VALID_CUBE_COUNT) {
             System.err.println(ErrorMessages.INVALID_INPUT);
             promptUser();
         }
-        String firstCube = inputList[0];
-        String secondCube = inputList[1];
-        String thirdCube = inputList[2];
-        String fourthCube = inputList[3];
+    }
 
-        if (firstCube.length() != Constants.VALID_SIDE_COUNT
-                || secondCube.length() != Constants.VALID_SIDE_COUNT
-                || thirdCube.length() != Constants.VALID_SIDE_COUNT
-                || fourthCube.length() != Constants.VALID_SIDE_COUNT) {
+    private static void validateSideCount(String cube) {
+        if (cube.length() != Constants.VALID_SIDE_COUNT) {
             System.err.println(ErrorMessages.INVALID_SIDE_COUNT);
             promptUser();
         }
-
-        validateColors(firstCube);
-        validateColors(secondCube);
-        validateColors(thirdCube);
-        validateColors(fourthCube);
-        return new String[]{firstCube, secondCube, thirdCube, fourthCube};
     }
 
     private static void validateColors(String cube) {
