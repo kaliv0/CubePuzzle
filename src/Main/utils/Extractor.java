@@ -9,13 +9,13 @@ public class Extractor {
     //extracts from possible permutations only valid ones according to given puzzle conditions
     public static List<String> extractValidPermutations(List<String> permutationList) {
         List<String> result = new ArrayList<>();
-        boolean isValid = false;
+        boolean isValidPermutation = false;
 
         for (String permutationString : permutationList) {
             String[] currPermutation = permutationString.split(" ");
-            isValid = validateColors(isValid, currPermutation);
+            isValidPermutation = validateColors(isValidPermutation, currPermutation);
 
-            if (isValid) {
+            if (isValidPermutation) {
                 result.add(permutationString);
             }
         }
@@ -23,17 +23,17 @@ public class Extractor {
     }
 
     //validates all colors in column of cube stack
-    private static boolean validateColors(boolean isValid, String[] currPermutation) {
+    private static boolean validateColors(boolean isValidPermutation, String[] currPermutation) {
         for (int row = 0; row < Constants.PERMUTATION_LENGTH; row++) {
             Set<Character> set = new HashSet<>();
             for (int col = 0; col < Constants.PERMUTATION_LENGTH; col++) {
                 set.add(currPermutation[col].charAt(row));
             }
-            isValid = set.size() == Constants.VALID_COLOR_COUNT;
-            if (!isValid) {
+            isValidPermutation = set.size() == Constants.VALID_COLOR_COUNT;
+            if (!isValidPermutation) {
                 break;
             }
         }
-        return isValid;
+        return isValidPermutation;
     }
 }

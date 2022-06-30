@@ -21,11 +21,9 @@ public class Orchestrator {
                                 thirdCubePositions.get(k), fourthCubePositions.get(m));
 
                         List<String> currResult = Extractor.extractValidPermutations(permutations);
-                        if (currResult.size() != 0) {
-                            //avoids duplicates from symmetric cubes
-                            if (!validPermutations.contains(currResult)) {
-                                validPermutations.add(currResult);
-                            }
+                        //avoids duplicates from symmetric cubes
+                        if (currResult.size() != 0 && !validPermutations.contains(currResult)) {
+                            validPermutations.add(currResult);
                         }
                     }
                 }
