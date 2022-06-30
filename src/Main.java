@@ -5,8 +5,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        //"RBGYBY,RGGYBB,YBRGYR,YGBRRR" =>invalid?!
-        //"RBGYBY,BGYGRB,GRRBYG,YYBRGR" =>valid
+        //"RBGYBY,BGYGRB,GRRBYG,YYBRGR" => valid input
+        //"RBGYBY,RGGYBB,YBRGYR,YGBRRR" => invalid input
 
         String[] cubes = IO.promptUser();
         List<String> firstCubePositions = Positioner.calculateCubePositions(cubes[0]);
