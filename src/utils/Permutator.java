@@ -4,15 +4,18 @@ import java.util.*;
 
 public class Permutator {
 
+    //static fields are used for computational and memory management reasons
     private static String[] elements;
     private static boolean[] used;
     private static String[] permutation;
     public static List<String> result;
 
+    //calculates possible permutations between given cube positions
     public static List<String> calculatePermutations(
-            String firstCube, String secondCube, String thordCube, String fourthCube) {
+            String firstCubePosition, String secondCubePosition,
+            String thirdCubePosition, String fourthCubePosition) {
 
-        elements = new String[]{firstCube, secondCube, thordCube, fourthCube};
+        elements = new String[]{firstCubePosition, secondCubePosition, thirdCubePosition, fourthCubePosition};
         used = new boolean[elements.length];
         permutation = new String[elements.length];
         result = new ArrayList<>();
@@ -21,6 +24,7 @@ public class Permutator {
         return result;
     }
 
+    //creates individual permutation from given cubePositions
     private static void permute(int index) {
         if (index == elements.length) {
             result.add(String.join(" ", permutation));

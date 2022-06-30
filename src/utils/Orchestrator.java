@@ -3,6 +3,8 @@ package utils;
 import java.util.*;
 
 public class Orchestrator {
+
+    //loops through positions of all cubes and finds all valid configuration between them if any
     public static List<List<String>> findValidCubeConfigurations(
             List<String> firstCubePositions, List<String> secondCubePositions,
             List<String> thirdCubePositions, List<String> fourthCubePositions) {

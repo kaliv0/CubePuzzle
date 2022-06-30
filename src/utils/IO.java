@@ -6,6 +6,8 @@ import java.util.Scanner;
 import java.util.regex.*;
 
 public class IO {
+
+    //reads input from user and calls validations on input
     public static String[] promptUser() {
         Scanner sc = new Scanner(System.in);
         System.out.println(Constants.PROMPT_MESSAGE);
@@ -20,6 +22,7 @@ public class IO {
         return cubeList;
     }
 
+    //checks if user entered 4 cubes, if not prompts user to enter input again
     private static void validateCubeCount(int cubeCount) {
         if (cubeCount != Constants.VALID_CUBE_COUNT) {
             System.err.println(ErrorMessages.INVALID_INPUT);
@@ -27,6 +30,7 @@ public class IO {
         }
     }
 
+    //checks if all cubes have 6 sides
     private static void validateSideCount(String cube) {
         if (cube.length() != Constants.VALID_SIDE_COUNT) {
             System.err.println(ErrorMessages.INVALID_SIDE_COUNT);
@@ -34,6 +38,7 @@ public class IO {
         }
     }
 
+    //checks cube colors and if each cube contains all the valid colors
     private static void validateColors(String cube) {
         Pattern pattern = Pattern.compile(Constants.CUBE_TESTER);
         Matcher matcher = pattern.matcher(cube);

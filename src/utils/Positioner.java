@@ -3,6 +3,8 @@ package utils;
 import java.util.*;
 
 public class Positioner {
+
+    //calculates all possibles positions of cube in terms of side directions
     public static List<String> calculateCubePositions(String initialPosition) {
         List<String> positionList = new ArrayList<>();
         positionList.add(initialPosition);
