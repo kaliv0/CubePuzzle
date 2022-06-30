@@ -4,7 +4,8 @@ import java.util.*;
 
 public class Orchestrator {
     public static List<List<String>> findValidCubeConfigurations(
-            List<String> firstCube, List<String> secondCube, List<String> thirdCube, List<String> fourthCube) {
+            List<String> firstCubePositions, List<String> secondCubePositions,
+            List<String> thirdCubePositions, List<String> fourthCubePositions) {
 
         List<List<String>> validPermutations = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
@@ -12,7 +13,8 @@ public class Orchestrator {
                 for (int k = 0; k < 6; k++) {
                     for (int l = 0; l < 6; l++) {
                         List<String> permutations = Permutator.calculatePermutations(
-                                firstCube.get(i), secondCube.get(j), thirdCube.get(k), fourthCube.get(l));
+                                firstCubePositions.get(i), secondCubePositions.get(j),
+                                thirdCubePositions.get(k), fourthCubePositions.get(l));
 
                         List<String> currResult = Extractor.extractValidPermutations(permutations);
                         if (currResult.size() != 0) {
