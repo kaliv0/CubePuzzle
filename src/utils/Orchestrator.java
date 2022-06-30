@@ -1,5 +1,7 @@
 package utils;
 
+import common.Constants;
+
 import java.util.*;
 
 public class Orchestrator {
@@ -10,10 +12,10 @@ public class Orchestrator {
             List<String> thirdCubePositions, List<String> fourthCubePositions) {
 
         List<List<String>> validPermutations = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
-                for (int k = 0; k < 6; k++) {
-                    for (int l = 0; l < 6; l++) {
+        for (int i = 0; i < Constants.VALID_SIDE_COUNT; i++) {
+            for (int j = 0; j < Constants.VALID_SIDE_COUNT; j++) {
+                for (int k = 0; k < Constants.VALID_SIDE_COUNT; k++) {
+                    for (int l = 0; l < Constants.VALID_SIDE_COUNT; l++) {
                         List<String> permutations = Permutator.calculatePermutations(
                                 firstCubePositions.get(i), secondCubePositions.get(j),
                                 thirdCubePositions.get(k), fourthCubePositions.get(l));
