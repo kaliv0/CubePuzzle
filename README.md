@@ -7,10 +7,10 @@ blue (B), red (R), green (G) and yellow (Y).<br>
 Describing the six faces as front, back,
 left, right, top, bottom, the cube colors are:<br>
 Cube Front Back Left Right Top Bottom<br>
-1     R     B    G     Y     B    Y<br>
-2     R     G    G     Y     B    B<br>
-3     Y     B    R     G     Y    R<br>
-4     Y     G    B     R     R    R<br>
+1&emsp;R&emsp;B&emsp;G&emsp;Y&emsp;B&emsp;Y<br>
+2&emsp;R&emsp;G&emsp;G&emsp;Y&emsp;B&emsp;B<br>
+3&emsp;Y&emsp;B&emsp;R&emsp;G&emsp;Y&emsp;R<br>
+4&emsp;Y&emsp;G&emsp;B&emsp;R&emsp;R&emsp;R<br>
 
 
 The objective is to find ways to stack the four cubes as a vertical column<br>
