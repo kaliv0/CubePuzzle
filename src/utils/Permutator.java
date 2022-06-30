@@ -15,7 +15,8 @@ public class Permutator {
             String firstCubePosition, String secondCubePosition,
             String thirdCubePosition, String fourthCubePosition) {
 
-        elements = new String[]{firstCubePosition, secondCubePosition, thirdCubePosition, fourthCubePosition};
+        elements = new String[]{firstCubePosition, secondCubePosition,
+                thirdCubePosition, fourthCubePosition};
         used = new boolean[elements.length];
         permutation = new String[elements.length];
         result = new ArrayList<>();

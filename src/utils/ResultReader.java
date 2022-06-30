@@ -17,10 +17,10 @@ public class ResultReader {
                 permutationCounter++;
                 String[] currPermutation = permutation.split(" ");
 
-                sb.append(Constants.HEADER_MESSAGE);
-                sb.append("\n");
-                sb.append(prepareCubesForDisplay(currPermutation));
-                sb.append("\n");
+                sb.append(Constants.HEADER_MESSAGE)
+                        .append("\n")
+                        .append(prepareCubesForDisplay(currPermutation))
+                        .append("\n");
             }
         }
         sb.append(Constants.PERMUTATION_COUNT)
