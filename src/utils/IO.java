@@ -41,9 +41,11 @@ public class IO {
 
     //checks cube colors and if each cube contains all the valid colors
     private static void validateColors(String cube) {
-        Pattern pattern = Pattern.compile(Validations.CUBE_TESTER);
-        Matcher matcher = pattern.matcher(cube);
-        boolean matchFound = matcher.find();
+        boolean matchFound =
+                Pattern.compile(Validations.CUBE_TESTER)
+                    .matcher(cube)
+                    .find();
+
         if (!matchFound) {
             System.err.println(ErrorMessages.INVALID_COLORS);
             promptUser();
